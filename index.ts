@@ -13,13 +13,7 @@ const handleClickEvent = () => {
 const generateUniqueUrl = (username) => `https://${username}.vercel.app/resume`;
 
 
-const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text).then(() => {
-        alert("Link copied to clipboard!");
-    }).catch(err => {
-        console.error("Failed to copy link:", err);
-    });
-};
+
 
 const printResume = () => {
   
@@ -70,7 +64,7 @@ document.getElementById('form')?.addEventListener('submit', (e) => {
         urlElement.innerText = `Your shareable resume link: ${uniqueUrl}`;
     }
 
-    // Show the share options
+    
     const shareOptions = document.getElementById('share');
     if (shareOptions) shareOptions.style.display = "block";
 

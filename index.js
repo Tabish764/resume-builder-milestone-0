@@ -11,13 +11,6 @@ var handleClickEvent = function () {
         toggle.innerText = showInput ? "Hide all sections" : "Show All Sections";
 };
 var generateUniqueUrl = function (username) { return "https://".concat(username, ".vercel.app/resume"); };
-var copyToClipboard = function (text) {
-    navigator.clipboard.writeText(text).then(function () {
-        alert("Link copied to clipboard!");
-    }).catch(function (err) {
-        console.error("Failed to copy link:", err);
-    });
-};
 var printResume = function () {
     window.print();
 };
@@ -41,7 +34,6 @@ var printResume = function () {
     if (urlElement) {
         urlElement.innerText = "Your shareable resume link: ".concat(uniqueUrl);
     }
-    // Show the share options
     var shareOptions = document.getElementById('share');
     if (shareOptions)
         shareOptions.style.display = "block";
