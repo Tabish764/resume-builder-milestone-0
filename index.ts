@@ -10,10 +10,9 @@ const handleClickEvent = () => {
     if (toggle) toggle.innerText = showInput ? "Hide all sections" : "Show All Sections";
 };
 
-// Function to generate a unique shareable URL
 const generateUniqueUrl = (username) => `https://${username}.vercel.app/resume`;
 
-// Function to copy the URL to clipboard
+
 const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text).then(() => {
         alert("Link copied to clipboard!");
@@ -22,7 +21,6 @@ const copyToClipboard = (text) => {
     });
 };
 
-// Function to print the resume
 const printResume = () => {
     const printContents = document.querySelector(".resume-container").innerHTML;
     const originalContents = document.body.innerHTML;
@@ -32,11 +30,11 @@ const printResume = () => {
     
 };
 
-// Form submit event to generate the resume and display options
+
 document.getElementById('form')?.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // Get input values
+ 
     const name = document.getElementById('firstName').value;
     const email = document.getElementById('email').value;
     const number = document.getElementById('number').value;
@@ -44,7 +42,7 @@ document.getElementById('form')?.addEventListener('submit', (e) => {
     const skills = document.getElementById('skills').value;
     const exp = document.getElementById('exp').value;
 
-    // Generate resume HTML
+   
     const resumeHtml = `
         <div class='resume-container'>
             <h2>Resume</h2>
@@ -60,25 +58,25 @@ document.getElementById('form')?.addEventListener('submit', (e) => {
         </div>
     `;
 
-    // Display the resume
+   
     const resumeOutputElement = document.getElementById('resume');
     if (resumeOutputElement) {
         resumeOutputElement.innerHTML = resumeHtml;
     }
 
-    // Generate a unique URL based on the name (assuming unique name)
-    const username = name.toLowerCase().replace(/\s+/g, ""); // Simplified "username" based on name
+   
+    const username = name.toLowerCase().replace(/\s+/g, ""); 
     const uniqueUrl = generateUniqueUrl(username);
-    const urlElement = document.getElementById('unique-url');
+    const urlElement = document.getElementById('unique');
     if (urlElement) {
         urlElement.innerText = `Your shareable resume link: ${uniqueUrl}`;
     }
 
     // Show the share options
-    const shareOptions = document.getElementById('share-options');
+    const shareOptions = document.getElementById('share');
     if (shareOptions) shareOptions.style.display = "block";
 
-    // Set up event listeners for "Copy Link" and "Print Resume"
-    document.getElementById('copy-link')?.addEventListener('click', () => copyToClipboard(uniqueUrl));
-    document.getElementById('print-resume')?.addEventListener('click', printResume);
+    
+    document.getElementById('copy')?.addEventListener('click', () => copyToClipboard(uniqueUrl));
+    document.getElementById('print')?.addEventListener('click', printResume);
 });
