@@ -69,6 +69,6 @@ document.getElementById('form')?.addEventListener('submit', (e) => {
     if (shareOptions) shareOptions.style.display = "block";
 
     
-    document.getElementById('copy')?.addEventListener('click', () => copyToClipboard(uniqueUrl));
+   
     document.getElementById('print')?.addEventListener('click', printResume);
 });

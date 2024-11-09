@@ -15,7 +15,7 @@ var printResume = function () {
     window.print();
 };
 (_a = document.getElementById('form')) === null || _a === void 0 ? void 0 : _a.addEventListener('submit', function (e) {
-    var _a, _b;
+    var _a;
     e.preventDefault();
     var name = document.getElementById('firstName').value;
     var email = document.getElementById('email').value;
@@ -37,6 +37,5 @@ var printResume = function () {
     var shareOptions = document.getElementById('share');
     if (shareOptions)
         shareOptions.style.display = "block";
-    (_a = document.getElementById('copy')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', function () { return copyToClipboard(uniqueUrl); });
-    (_b = document.getElementById('print')) === null || _b === void 0 ? void 0 : _b.addEventListener('click', printResume);
+    (_a = document.getElementById('print')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', printResume);
 });
